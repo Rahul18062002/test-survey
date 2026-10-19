@@ -1,0 +1,41 @@
+{
+  "name": "questionnaireflow",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Answer any questionnaire from your own approved knowledge base, with one-click human review.",
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"node --watch --disable-warning=ExperimentalWarning --env-file-if-exists=.env server/index.js\" \"vite\"",
+    "build": "vite build",
+    "start": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env server/index.js",
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.js && node scripts/viasocket-check.mjs server client",
+    "check:viasocket": "node scripts/viasocket-check.mjs server client",
+    "prove:viasocket": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env scripts/prove-viasocket.mjs"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dependencies": {
+    "@tesseract.js-data/eng": "^1.0.0",
+    "docx": "^9.12.0",
+    "exceljs": "^4.4.0",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mammoth": "^1.13.0",
+    "multer": "^2.4.0",
+    "node-html-parser": "^9.0.5",
+    "papaparse": "^5.7.0",
+    "pdfjs-dist": "^6.4.299",
+    "pdfkit": "^0.20.2",
+    "tesseract.js": "^7.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "concurrently": "^10.0.6",
+    "playwright": "^1.64.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.4",
+    "vite": "^8.3.4"
+  }
+}

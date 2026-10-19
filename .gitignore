@@ -1,0 +1,12 @@
+node_modules/
+dist/
+data/
+.env
+*.log
+
+# fetched fresh per task by the viasocket skill; never work from a saved copy
+.claude/skills/viasocket/apps/
+.claude/skills/viasocket/ai.md
+
+# separate repository cloned alongside
+test-survey/
