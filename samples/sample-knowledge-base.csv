@@ -1,0 +1,6 @@
+Question,Answer
+"Is customer data encrypted at rest?","Yes. All customer data is encrypted at rest using AES-256."
+"How is data encrypted in transit?","All traffic uses TLS 1.2 or higher."
+"Do you support single sign-on (SSO)?","Yes. We support SAML 2.0 and OpenID Connect."
+"Where is customer data hosted?","In AWS data centers in the United States (us-east-1)."
+"How long are backups retained?","Daily encrypted backups are kept for 35 days."
