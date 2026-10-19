@@ -3,7 +3,8 @@ import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
 
-export const DATA_DIR = process.env.QF_DATA_DIR || path.resolve('data')
+// DATA_DIR is the persistent folder on hosts that provide one (e.g. Embarko); QF_DATA_DIR overrides it.
+export const DATA_DIR = process.env.QF_DATA_DIR || process.env.DATA_DIR || path.resolve('data')
 export const UPLOAD_DIR = path.join(DATA_DIR, 'uploads')
 export const OUTPUT_DIR = path.join(DATA_DIR, 'outputs')
 for (const dir of [DATA_DIR, UPLOAD_DIR, OUTPUT_DIR]) fs.mkdirSync(dir, { recursive: true })
